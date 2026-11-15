@@ -19,7 +19,10 @@ fun AppNavigation() {
         }
 
         entry<IMC> {
-            ImcScreen(onResultSelected = { backStack.add(IMCResult(it))})
+            ImcScreen(
+                onResultSelected = { backStack.add(IMCResult(it)) },
+                onBackSelected = { backStack.removeLastOrNull() }
+            )
         }
 
         entry<IMCResult> { data ->
