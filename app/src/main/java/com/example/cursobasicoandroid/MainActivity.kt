@@ -17,6 +17,7 @@ import com.example.cursobasicoandroid.composables.ListExample
 import com.example.cursobasicoandroid.composables.ProfileScreen
 import com.example.cursobasicoandroid.composables.TextExample
 import com.example.cursobasicoandroid.composables.TextFieldExample
+import com.example.cursobasicoandroid.core.AppNavigation
 import com.example.cursobasicoandroid.features.MenuScreen
 import com.example.cursobasicoandroid.ui.theme.CursoBasicoAndroidTheme
 
@@ -33,7 +34,7 @@ class MainActivity : ComponentActivity() {
 //                    )
 //                }
                 //Example()
-                MenuScreen()
+                AppNavigation()
             }
         }
     }

@@ -17,21 +17,30 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MenuScreen(onImcSelected: () -> Unit) {
+fun MenuScreen(
+    onImcSelected: () -> Unit,
+    onSettingsSelected: () -> Unit
+    ) {
     Scaffold(Modifier.fillMaxSize(), topBar = {
         TopAppBar(title = {
             Text("Eithax App")
         })
     }){ paddingValues ->
-        Column(modifier = Modifier.fillMaxSize().padding(top = 18.dp).padding(paddingValues), horizontalAlignment = Alignment.CenterHorizontally) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(top = 18.dp)
+                .padding(paddingValues),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
             Button(onClick = { onImcSelected() }) {
                 Text("IMC Calculator")
             }
 
             Spacer(Modifier.height(24.dp))
 
-            Button(onClick = {}) {
-                Text("IMC Calculator")
+            Button(onClick = { onSettingsSelected() }) {
+                Text("Settings")
             }
         }
     }

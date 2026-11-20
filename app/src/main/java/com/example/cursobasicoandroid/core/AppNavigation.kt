@@ -7,6 +7,7 @@ import androidx.navigation3.ui.NavDisplay
 import com.example.cursobasicoandroid.features.MenuScreen
 import com.example.cursobasicoandroid.features.imc.ImcResultScreen
 import com.example.cursobasicoandroid.features.imc.ImcScreen
+import com.example.cursobasicoandroid.features.settings.SettingsScreen
 
 @Composable
 fun AppNavigation() {
@@ -15,7 +16,10 @@ fun AppNavigation() {
 
     NavDisplay(backStack = backStack, entryProvider = entryProvider{
         entry<Menu> {
-            MenuScreen(onImcSelected = {backStack.add(IMC)})
+            MenuScreen(
+                onImcSelected = {backStack.add(IMC)},
+                onSettingsSelected = {backStack.add(Settings)}
+            )
         }
 
         entry<IMC> {
@@ -27,6 +31,12 @@ fun AppNavigation() {
 
         entry<IMCResult> { data ->
             ImcResultScreen(data.result, onBackSelected = { backStack.removeLastOrNull()})
+        }
+
+        entry<Settings> {
+            SettingsScreen( onBackSelected = {
+                backStack.removeLastOrNull()}
+            )
         }
     })
 }

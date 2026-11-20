@@ -11,3 +11,6 @@ data object IMC: NavKey
 
 @Serializable
 data class IMCResult (val result: Float): NavKey
+
+@Serializable
+data object Settings: NavKey
